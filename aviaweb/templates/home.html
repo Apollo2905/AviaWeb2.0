@@ -1,0 +1,44 @@
+{% extends 'base_layout.html' %}
+{% load static from static %}
+{% block content %}
+
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-9">
+                <div class="box">
+                    <form method="get" class="mt-4">
+                        <div class="field is-horizontal">
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control is-expanded has-icons-left">
+                                        <input type="search" class="input" name="departure" placeholder="Откуда">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded has-icons-left has-icons-right">
+                                        <input type="search" class="input" name="arrival" placeholder="Куда">
+
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <div class="control is-expanded has-icons-left has-icons-right">
+                                        <input type="date" class="datetime" name="scheduled_departure"
+                                               placeholder="Дата">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control is-expanded has-icons-left has-icons-right">
+                                        <button class="button" type="submit">
+                                            <ion-icon name="search-outline"></ion-icon>
+                                            <span>Поиск билетов</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

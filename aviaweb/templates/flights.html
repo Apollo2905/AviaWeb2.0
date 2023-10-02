@@ -1,0 +1,48 @@
+{% extends 'base_layout.html' %}
+{% load static from static %}
+
+{% block content %}
+    <div class="container">
+        {% for flight in flights %}
+
+            <div class="card">
+                <div class="card-content">
+                    <a href="{% url 'aviaweb:booking' booking.pk %}">
+                        <figure class="image">
+                            <img src="{{ booking.url }}" alt="">
+                        </figure>
+                    </a>
+                    <div class="media">
+                        <br>
+                        <div class="media-content">
+                            <div class="title is-4">{{ flight.flight_no }}</div>
+                        </div>
+                    </div>
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <div class="content has-text-weight-bold">
+                                {{ flight.departure_airport.city }}
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="content has-text-weight-bold">
+                                {{ flight.arrival_airport.city }}
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="content has-text-weight-bold">
+                                {{ flight.scheduled_departure.date }}
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="content has-text-weight-bold">
+                                {{ flight.scheduled_arrival.date }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

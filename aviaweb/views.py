@@ -25,4 +25,8 @@ def home(request):
 
 
 def bookings(request):
-    pass
+    book_ref = Booking.objects.all()
+    book_date = request.GET.get('book_date')
+    total_amount = request.GET.get('total_amount')
+
+    return render(request, 'bookings.html', {'book_date': book_date, 'book_ref': book_ref, 'total_amount': total_amount})

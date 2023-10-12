@@ -8,3 +8,7 @@ function deleteItem(pk) {
     toggleModal()
 }
 
+document.querySelector('.menu-btn').addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector('.menu').classList.toggle('menu_active');
+  })

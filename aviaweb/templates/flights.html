@@ -6,35 +6,35 @@
         {% for flight in flights %}
 
             <div class="card">
-                <div class="card-content">
-                    <a href="{% url 'aviaweb:booking' booking.pk %}">
-                        <figure class="image">
-                            <img src="{{ booking.url }}" alt="">
-                        </figure>
+                <div class="card-content mt-3">
+                    <a href="{% url 'aviaweb:bookings' %}">
+                        <a class="title">
+                            <img src="{{ bookings.url }}" alt="">
+                        </a>
                     </a>
                     <div class="media">
                         <br>
-                        <div class="media-content">
-                            <div class="title is-4">{{ flight.flight_no }}</div>
+                        <div class="media-content">Номер рейса:
+                            <div class="title is-4"> {{ flight.flight_no }}</div>
                         </div>
                     </div>
                     <div class="columns is-vcentered">
-                        <div class="column">
+                        <div class="column">Аэропорт отправления:
                             <div class="content has-text-weight-bold">
                                 {{ flight.departure_airport.city }}
                             </div>
                         </div>
-                        <div class="column">
+                        <div class="column">Аэропорт прибытия:
                             <div class="content has-text-weight-bold">
                                 {{ flight.arrival_airport.city }}
                             </div>
                         </div>
-                        <div class="column">
+                        <div class="column">Дата отправления:
                             <div class="content has-text-weight-bold">
                                 {{ flight.scheduled_departure.date }}
                             </div>
                         </div>
-                        <div class="column">
+                        <div class="column">Дата прибытия:
                             <div class="content has-text-weight-bold">
                                 {{ flight.scheduled_arrival.date }}
                             </div>
